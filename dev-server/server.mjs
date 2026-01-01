@@ -8,6 +8,13 @@ console.log(html);
 http
 .createServer((req, res) => {
 
+  if (req.url === "/html") {
+
+    res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
+    res.end(html);
+
+    return;
+  }
 //  if (req.url == "/styles.css")
   res.writeHead(200, { 'Content-Type': 'text/plain'});
   res.end('Hello\n');
